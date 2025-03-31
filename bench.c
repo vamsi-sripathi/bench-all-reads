@@ -153,7 +153,7 @@ int main (int argc, char **argv)
   }
 
   num_vectors = atoi(argv[1]);
-  n           = atol(argv[2]);
+  n           = atoll(argv[2]);
 
   if (num_vectors > MAX_NUM_VECTORS) {
     printf ("num_vectors = %d is not supported.. exiting..\n",
@@ -272,7 +272,7 @@ int main (int argc, char **argv)
   // one validation check for all trials
   if (check_results(num_vectors, n, p_vectors, res/NTRIALS)) {
     printf ("validation failed!\n");
-    /* goto bailout; */
+    goto bailout;
   } else {
     printf ("validation passed\n");
   }

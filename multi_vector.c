@@ -295,7 +295,7 @@ double two_vector(long long n, long long start, double **p_vectors)
 #define  PREFETCH
   __m512d zmm0, zmm1, zmm2, zmm3;
   __m512d zmm4, zmm5, zmm6, zmm7;
-  __m512d zmm_a0, zmm_a1, zmm_a2, zmm_a3;
+  __m512d zmm_a0, zmm_a1;
 
   double tmp = 0.0;
 
@@ -318,8 +318,6 @@ double two_vector(long long n, long long start, double **p_vectors)
 
   zmm_a0 = _mm512_setzero_pd();
   zmm_a1 = _mm512_setzero_pd();
-  zmm_a2 = _mm512_setzero_pd();
-  zmm_a3 = _mm512_setzero_pd();
 
   while (n_blk) {
     zmm0 = _mm512_loadu_pd(p_x0);
